@@ -1,10 +1,10 @@
 import React from 'react';
-import FileUpload from './FileUpload';
+import UploadFile from './UploadFile';
 
 function App() {
   return (
     <div>
-      <FileUpload />
+      <UploadFile />
     </div>
   );
 }
