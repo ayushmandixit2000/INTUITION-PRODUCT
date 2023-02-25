@@ -4,11 +4,10 @@ import time
 from pikepdf import Pdf, Name, PdfImage
 import os
 
-openai.api_key = "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"
-model_engine = "text-davinci-003"
-user_prompt = "Generate a powerpoint slide header and 4 bullet points that are at most 2 sentences long for this text: "
-
 def summarise(name):
+    openai.api_key = "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"
+    model_engine = "text-davinci-003"
+    user_prompt = "Generate a powerpoint slide header and 4 bullet points that are at most 2 sentences long for this text: "
 
     # Open the PDF file in read binary mode
     pdf_file_download = open(os.path.join('papers', name), 'rb')
