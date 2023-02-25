@@ -26,8 +26,8 @@ function FileUpload() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="file" onChange={handleFileUpload} />
-        <button type="submit">Upload and Process</button>
+        <input type="file" onChange={handleFileUpload} className="py-1 px-2 rounded-md bg-orange-300 text-black font-semibold" />
+        <button type="submit">Summarise</button>
       </form>
       {output && <p>{output}</p>}
     </div>
