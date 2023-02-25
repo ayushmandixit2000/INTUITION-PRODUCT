@@ -11,7 +11,7 @@ user_prompt = "Generate a powerpoint slide header and 4 bullet points that are a
 def summarise(name):
 
     # Open the PDF file in read binary mode
-    pdf_file_download = open(f'/Users/advait/Desktop/gitpositories/INTUITION-PRODUCT/server/papers/{name}', 'rb')
+    pdf_file_download = open(os.path.join('papers', name), 'rb')
 
     # Create a PDF reader object
     pdf_reader = PyPDF2.PdfReader(pdf_file_download)
@@ -20,7 +20,7 @@ def summarise(name):
     num_pages = len(pdf_reader.pages)
 
     # Create a text file to write the converted text
-    text_file_download = open(f'/Users/advait/Desktop/gitpositories/INTUITION-PRODUCT/server/output/{name}.txt', 'w')
+    text_file_download = open(os.path.join('output', f'{name}.txt'), 'w')
 
     responseTotal = []
     for page_num in range(num_pages):
@@ -50,7 +50,7 @@ def summarise(name):
     return responseTotal
 
 def extract_images(name):
-    folder_path = '/Users/advait/Desktop/gitpositories/INTUITION-PRODUCT/server/images'
+    folder_path = 'images'
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         try:
@@ -61,7 +61,7 @@ def extract_images(name):
         except Exception as e:
             print(f"Failed to delete {file_path}. Reason: {e}")
 
-    old_pdf = Pdf.open(f"/Users/advait/Desktop/gitpositories/INTUITION-PRODUCT/server/papers/{name}")
+    old_pdf = Pdf.open(os.path.join('papers', name))
     imagenames = []
     for i in range(len(old_pdf.pages)):
         page_1 = old_pdf.pages[i]
@@ -71,7 +71,7 @@ def extract_images(name):
             for x in page_1.images.keys():
                 raw_image = page_1.images[x]
                 pdf_image = PdfImage(raw_image)
-                pdf_image.extract_to(fileprefix= folder_path + '/page' + str(i) + 'image' + str(count))
+                pdf_image.extract_to(fileprefix= os.path.join(folder_path, f'page{i}image{count}'))
                 count+=1
 
     print(imagenames)
