@@ -13,7 +13,7 @@ import re
 def summarise(name):
     openai.api_key = "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"
     model_engine = "text-davinci-003"
-    user_prompt = "Generate a powerpoint slide header and 4 bullet points that are at most 2 sentences long for this text: "
+    user_prompt = "Generate a powerpoint Slide Header and only four Bullet Points that are at most 2 sentences long for this text: "
 
     # Open the PDF file in read binary mode
     pdf_file_download = open(os.path.join('papers', name), 'rb')
@@ -82,6 +82,27 @@ def extract_images(name):
     print(imagenames)
 
 
+def extract_header_and_bullets(text):
+    result = {}
+
+    # Extract the header
+    header_start = text.find("Header:") + len("Header:")
+    header_end = text.find("\n", header_start)
+    result["header"] = text[header_start:header_end].strip()
+
+    # Extract the bullet points
+    bullet_start = text.find("\n•") + 1
+    bullet_end = len(text)
+    bullet_text = text[bullet_start:bullet_end].strip()
+    bullet_points = re.split(r'\n[•\-0-9.]+', bullet_text)
+
+    # Remove bullet characters from bullet points
+    bullet_points = [re.sub(r'^[•\-0-9.]+\s+', '', p) for p in bullet_points]
+
+    result["bullets"] = bullet_points
+
+    return result
+
 def generate_slides(infoList):
     prs = Presentation()
     print(infoList)
@@ -93,29 +114,18 @@ def generate_slides(infoList):
 
         text = item['summary']
 
-        # Extract the header text
-        header_start = text.find("Header:") + len("Header:")
-        header_end = text.find("\n\n", header_start)
-        header_text = text[header_start:header_end].strip()
-
-        # Extract the bullet points
-        bullet_start = text.find("Points:") + len("Points:")
-        bullet_end = text.find("\n\n", bullet_start)
-        bullet_text = text[bullet_start:bullet_end].strip()
-        # bullet_points = bullet_text.split("\n")
-        bullet_points = re.split(r'\n[•\-0-9.]+', bullet_text)
-        # bullet_points = re.split(r'(?<=\n)[•\-0-9.]+', bullet_text)
+        processed = extract_header_and_bullets(text)
 
         # Add each object as a slide
         slide = prs.slides.add_slide(prs.slide_layouts[3])
         slide_title = slide.shapes.title
-        slide_title.text = header_text
+        slide_title.text = processed['header']
         slide_title.text_frame.paragraphs[0].font.size = Pt(30)
         slide_title.text_frame.paragraphs[0].font.color.rgb = RGBColor(14, 77, 22)
         slide_title.text_frame.paragraphs[0].font.bold = True
         tf = slide.shapes.placeholders[1].text_frame
 
-        for bullet_point in bullet_points:
+        for bullet_point in processed['bullets']:
             p = tf.add_paragraph()
             p.text = bullet_point
             p.font.size = Pt(18)

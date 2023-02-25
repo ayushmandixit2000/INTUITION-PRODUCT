@@ -1,0 +1,72 @@
+We expanded Study 2 to include a novel measure of perceived
+moral standing independent of an entity ’s perceived experience
+covered by the mind perception questionnaire. This was done
+because the social-relational approach to electronic agents ’moral
+standing challenges perspectives that defend experience-related
+capacities as preconditions for moral status. Nevertheless, we did
+not/uniFB01nd any signi /uniFB01cant difference between treatment conditions
+in both attributions of experience and our proposed moral
+standing measure. These results corroborate our /uniFB01ndings from
+Study 1 by showing that interacting with AI-generated outputs
+should not in /uniFB02uence people ’s ascription of moral standing.
+Nudging people to think about the mind of an AI system did
+not necessarily in /uniFB02uence how they valued AI-generated art in
+Study 2. Our results instead suggest that overvaluing AI-
+generated art could in /uniFB02uence how people perceive it. We
+hypothesize that the treatment conditions ’social in /uniFB02uence
+mitigated any possible effect of considerations about an AI
+system ’s mind similar to those found in Study 1. Similar to
+how past auctions of AI-generated art were presented to the
+public ( Cohn, 2018 ;Ives, 2021 ), overvaluing these outputs could
+in/uniFB02uence how much people value them.
+7 GENERAL DISCUSSION
+Inspired by Gunkel ’s and Coeckelbergh ’s social-relational
+approaches to robots ’moral standing, we conducted two studies
+to understand whether a similar perspective would in /uniFB02uence
+people ’s ascription of moral status to a nonsocial automated
+agent, namely an AI-generative system. We /uniFB01rst identi /uniFB01ed a set
+of ten AI-generated images that were used in subsequent studies.
+Study 1 inquired whether interacting with these images would
+in/uniFB02uence people ’s ascription of moral agency and patiency to their
+creator —as suggested by Gunkel (2018b) . Study 2 asked whether
+highlighting an AI system ’s extrinsic value by undervaluing or
+overvaluing its images affected participants ’attribution of agency,experience, and moral status, as proposed by Coeckelbergh
+(2020b) . The current research took a novel experimental
+approach to the normative debate of robot rights in the context
+of AI-generated art.
+We employed a series of measures to quantify AI systems ’
+perceived moral (and artistic) standing. Interacting with AI-
+generated art did not signi /uniFB01cantly impact how participants
+perceived the system ’s ability to create art, experience art, and
+the experience dimension of mind in both Studies 1 and 2. The
+latter was measured by a mind perception questionnaire, whose
+measure has been shown to correlate with the recognition of
+moral rights ( Waytz et al., 2010 ;Gray et al., 2007 ). Study 2 also
+showed that interacting with AI-generated art did not in /uniFB02uence
+the AI system ’s perceived moral standing in a novel measure of
+moral consideration independent of the system ’s experience.
+Study 2 ’s participants attributed lower levels of agency to AI
+systems after interacting with overvalued AI-generated art. This
+/uniFB01nding suggests that seeing others overvaluing AI systems ’
+abilities could negatively in /uniFB02uence their perceived agency. This
+/uniFB01nding may be contrary to what one would expect. Similar to
+Coeckelbergh ’s approach to AI systems ’patiency, highlighting
+the system ’s creative value by overvaluing its generated images
+should, at /uniFB01rst thought, increase their perceived (artistic) agency.
+Finally, Study 1 suggests that nudging participants to think
+about an AI systems ’mind could lead to a lower appreciation of
+AI-generated art. A possible interpretation is that machine
+creativity is not valued to the same extent as its human
+counterparts, particularly when AI systems ’lack of humanness
+and mind becomes apparent. As argued by some scholars, AI-
+generated art may lack the meaning necessary to be considered
+art—such meaning can only emerge from human artistic
+communication ( Elgammal, 2020 ). Another possible
+explanation is that art is also evaluated by the effort put into
+its creation. More realistic images in our Experimental Setting
+were often attributed to human artists, while abstractions were
+usually viewed as AI-generated. Participants might have judged
+FIGURE 3 | To what extent participants modi /uniFB01ed their initial art evaluation after treatment in Study 2 (A).A t t r i b u t i o n so fa g e n c y ,e x p e r i e n c e ,m o r a ls t a t u s ,a r t
+agency, and art experience to the AI system depending on the condition participants were assigned to in Study 2 (B). Marginal mean evaluation across all ten images
+depending on treatment group (C).
+Frontiers in Robotics and AI | www.frontiersin.org August 2021 | Volume 8 | Article 719944 10Lima et al. Moral Standing of AI-Generative Systems
