@@ -1,0 +1,56 @@
+import PyPDF2
+from io import StringIO
+import io
+from urllib.request import urlopen, Request
+from PyPDF2 import PdfFileReader
+import openai
+import time
+
+openai.api_key = "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"
+model_engine = "text-davinci-003"
+user_prompt = "I want a powerpoint slide header and description from this text in 4 bullet points: "
+
+def summarise(name):
+
+    # Open the PDF file in read binary mode
+    pdf_file_download = open(f'/Users/advait/Desktop/intuition_tests/server/papers/{name}', 'rb')
+
+    # Create a PDF reader object
+    pdf_reader = PyPDF2.PdfReader(pdf_file_download)
+
+    # Get the total number of pages in the PDF file
+    num_pages = len(pdf_reader.pages)
+
+    # Create a text file to write the converted text
+    text_file_download = open(f'/Users/advait/Desktop/intuition_tests/server/output/{name}.txt', 'w')
+
+    # Loop through each page and extract the text
+    for page_num in range(num_pages):
+        page = pdf_reader.pages[page_num]
+        text = page.extract_text()
+        text_file_download.write(text)
+
+    for page_num in range(num_pages):
+        page = pdf_reader.pages[page_num]
+        text = page.extract_text()
+        print("new page \n",text)
+        text_file_download.write(text)
+        prompt = user_prompt + text
+
+        completion = openai.Completion.create(
+            engine = model_engine,
+            prompt = prompt,
+            max_tokens = 1024,
+            n = 1,
+            stop = None,
+            temperature = 0.5,
+        )
+
+        response = completion.choices[0].text
+        print(response + "\n")
+        time.sleep(5)
+
+    # Close the files
+    pdf_file_download.close()
+    text_file_download.close()
+
