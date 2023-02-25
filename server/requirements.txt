@@ -4,3 +4,4 @@ flask
 flask-cors
 pikepdf
 python-pptx
+pillow
