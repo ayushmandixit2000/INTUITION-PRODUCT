@@ -4,7 +4,6 @@ import time
 from pptx import Presentation
 from pptx.util import Inches
 from pptx.dml.color import RGBColor
-from pptx.enum.dml import MSO_THEME_COLOR
 from pptx.util import Pt
 from PIL import Image
 import os
