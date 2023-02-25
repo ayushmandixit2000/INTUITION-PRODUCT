@@ -29,7 +29,7 @@ function NewsList() {
 
   return (
     <div>
-      <h2 className="text-center text-2xl mx-auto animate-text bg-gradient-to-r from-teal-500 via-yellow-300 to-orange-500 bg-clip-text text-transparent mb-4">
+      <h2 className="text-center font-bold text-3xl mx-auto mt-4 animate-text bg-gradient-to-r from-teal-500 via-yellow-300 to-orange-500 bg-clip-text text-transparent mb-4">
         Recent Healthcare updates
       </h2>
       <ul>
@@ -48,7 +48,7 @@ function NewsList() {
           >
             <div className="flex flex-nowrap justify-between gap-6 w-screen px-8 mb-8 mt-4">
               {articles.map((article) => (
-                <div className="w-1/4 p-8 hover:scale-105 ease-in-out duration-300 text-center shadow-lg rounded-xl border-2 border-orange-200 ">
+                <div className="mt-4 w-1/4 p-8 hover:scale-105 ease-in-out duration-300 text-center shadow-lg rounded-xl border-2 border-orange-200 ">
                   <li className="text-white " key={article.url}>
                     <br />
                     <div className="mx-auto h-60 flex items-center justify-center">
