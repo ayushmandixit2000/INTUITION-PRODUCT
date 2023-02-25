@@ -1,6 +1,7 @@
 import React from 'react';
-import FileUpload from './FileUpload';
 import Typewriter from "typewriter-effect";
+import UploadFile from './UploadFile';
+
 
 function App() {
   return (
@@ -23,9 +24,10 @@ function App() {
                 }}
               />
             </div>
-      <FileUpload />
-    </div>
-    
-  );
-}
+            <UploadFile />
+            </div>
+  )
+              }
+
+
 export default App;
