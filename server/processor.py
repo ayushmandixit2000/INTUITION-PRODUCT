@@ -87,29 +87,57 @@ def generate_slides(infoList):
 
     for item in infoList:
         # Split the summary into bullet points
-        bullet_points = item['summary'].split("\n")
-        bullet_points = [bp.strip() for bp in bullet_points]
-        
+        # bullet_points = item['summary'].split("\n")
+        # bullet_points = [bp.strip() for bp in bullet_points]
+
+        text = item['summary']
+
+        # Extract the header text
+        header_start = text.find("Header:") + len("Header:")
+        header_end = text.find("\n\n", header_start)
+        header_text = text[header_start:header_end].strip()
+
+        # Extract the bullet points
+        bullet_start = text.find("Points:") + len("Points:")
+        bullet_end = text.find("\n\n", bullet_start)
+        bullet_text = text[bullet_start:bullet_end].strip()
+        bullet_points = bullet_text.split("\n")
+
         # Add each object as a slide
         slide = prs.slides.add_slide(prs.slide_layouts[3])
         slide_title = slide.shapes.title
-        slide_title.text = bullet_points[0].split("\n")[0]
+        slide_title.text = header_text
         slide_title.text_frame.paragraphs[0].font.size = Pt(30)
         slide_title.text_frame.paragraphs[0].font.color.rgb = RGBColor(14, 77, 22)
         slide_title.text_frame.paragraphs[0].font.bold = True
         tf = slide.shapes.placeholders[1].text_frame
 
-        for bullet_point in bullet_points[1:]:
+        for bullet_point in bullet_points:
             p = tf.add_paragraph()
             p.text = bullet_point
-            p.font.size = Pt(24)
+            p.font.size = Pt(18)
             p.font.color.rgb = RGBColor(0,0,0)
             p.level = 1
         
         image_path = os.path.join('images', os.path.basename(item['image_url']))
         logo_path = os.path.join(os.getcwd(), 'msd.png')
+        with Image.open(image_path) as img:
+            img.info['dpi'] = (300,300)
+            dpi = img.info['dpi']
+            img_width, img_height = img.size
+            width_inch = img_width / dpi[0]
+            height_inch = img_height / dpi[1]
+            print (width_inch, height_inch)
+
+        # Get the dimensions of the slide
+        # slide_width = slide.slide_width
+        # slide_height = slide.slide_height
+
+        # Calculate the scale factor that will allow the image to fit within the slide
+        # scale_factor = min(slide_width / img_width, slide_height / img_height)
+        scale_factor2 = 0.5
         
         slide.shapes.add_picture(logo_path, Inches(7.22), Inches(6.22), width=Inches(2.77), height=Inches(1.17))
-        slide.shapes.add_picture(image_path, Inches(0.22), Inches(6.22), width=Inches(2.77), height=Inches(1.17))
+        slide.shapes.add_picture(image_path, Inches(5.9), Inches(3.4),width=Inches(width_inch * scale_factor2), height=Inches(height_inch * scale_factor2)) #, width=Inches(2.77), height=Inches(1.17)
 
     return prs

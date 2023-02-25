@@ -1,0 +1,5 @@
+Multi-Variate Decision TreeLegendaryTrue or FalseTotalTotal PointsHPHit PointsAttackAttack PointsDefenseDefense PointsSwarm Plots per PredictorData ScienceBinary Classification
+11
+Multi-Variate Decision TreeLegendaryTrue or FalseTotalTotal PointsHPHit PointsAttackAttack PointsDefenseDefense PointsTwo-Level Decision TreeData ScienceBinary Classification
+12
+15Data Science PipelineMachine LearningHow to learn from the acquired Data? How to model the acquired Data?How to predict on new Data?How to optimally learn from the Data?
