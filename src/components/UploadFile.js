@@ -5,23 +5,39 @@ import Summary from './Summary';
 function UploadFile() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [summary, setSummary] = useState([]);
+  const [imageUrls, setImageUrls] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFileSelect = (event) => {
     setSelectedFile(event.target.files[0]);
   };
 
   const handleFileUpload = () => {
+    setSummary([]);
+    setIsLoading(true);
     const formData = new FormData();
     formData.append("pdf_file", selectedFile);
     axios
-      .post("http://127.0.0.1:5000/paperUpload", formData)
+      .post("http://127.0.0.1:5000/getSummary", formData)
       .then((response) => {
         console.log(response.data);
-        setSummary(response.data);
+        const summaryData = response.data;
+        axios.get('http://127.0.0.1:5000/api/get_image_urls')
+        .then(response => {
+          setImageUrls(response.data.imageUrls);
+          setSummary(summaryData);
+          setIsLoading(false)
+        })
+        .catch(error => {
+          console.error(error);
+        });
+
       })
       .catch((error) => {
         console.log(error);
       });
+      
+
   };
 
   return (
@@ -44,7 +60,7 @@ function UploadFile() {
         </button>
       </div>
     
-      <Summary text={summary} />
+      <Summary text={summary} images={imageUrls} loading={isLoading}/>
     </div>
   );
 }
