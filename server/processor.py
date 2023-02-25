@@ -3,6 +3,11 @@ import openai
 import time
 from pikepdf import Pdf, Name, PdfImage
 import os
+from pptx import Presentation
+from pptx.util import Inches
+from pptx.dml.color import RGBColor
+from pptx.util import Pt
+from PIL import Image
 
 def summarise(name):
     openai.api_key = "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"
@@ -74,3 +79,37 @@ def extract_images(name):
                 count+=1
 
     print(imagenames)
+
+
+def generate_slides(infoList):
+    prs = Presentation()
+    print(infoList)
+
+    for item in infoList:
+        # Split the summary into bullet points
+        bullet_points = item['summary'].split("\n")
+        bullet_points = [bp.strip() for bp in bullet_points]
+        
+        # Add each object as a slide
+        slide = prs.slides.add_slide(prs.slide_layouts[3])
+        slide_title = slide.shapes.title
+        slide_title.text = bullet_points[0].split("\n")[0]
+        slide_title.text_frame.paragraphs[0].font.size = Pt(30)
+        slide_title.text_frame.paragraphs[0].font.color.rgb = RGBColor(14, 77, 22)
+        slide_title.text_frame.paragraphs[0].font.bold = True
+        tf = slide.shapes.placeholders[1].text_frame
+
+        for bullet_point in bullet_points[1:]:
+            p = tf.add_paragraph()
+            p.text = bullet_point
+            p.font.size = Pt(24)
+            p.font.color.rgb = RGBColor(0,0,0)
+            p.level = 1
+        
+        image_path = os.path.join('images', os.path.basename(item['image_url']))
+        logo_path = os.path.join(os.getcwd(), 'msd.png')
+        
+        slide.shapes.add_picture(logo_path, Inches(7.22), Inches(6.22), width=Inches(2.77), height=Inches(1.17))
+        slide.shapes.add_picture(image_path, Inches(0.22), Inches(6.22), width=Inches(2.77), height=Inches(1.17))
+
+    return prs

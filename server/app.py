@@ -1,7 +1,8 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, send_file
 from flask_cors import CORS
-from processor import summarise, extract_images
+from processor import summarise, extract_images, generate_slides
 import os
+import io
 
 app = Flask(__name__)
 CORS(app)
@@ -30,6 +31,21 @@ def get_summary():
     else:
         # Return an error message to the client
         return 'No PDF file was uploaded.'
+
+@app.route('/getPPT', methods=['POST'])
+def generate_pptx():
+    # Get the list of objects from the request body
+    my_list = request.json.get('my_list')
+
+    prs = generate_slides(my_list)
+
+    # Save the PowerPoint presentation to a file
+    pptx_file = io.BytesIO()
+    prs.save(pptx_file)
+    pptx_file.seek(0)
+
+    # Return the PowerPoint file as a download
+    return send_file(pptx_file, download_name='my_pptx.pptx', as_attachment=True)
 
 @app.route('/api/images/<path:image_filename>')
 def serve_image(image_filename):
