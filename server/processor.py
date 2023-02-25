@@ -8,6 +8,7 @@ from pptx.util import Inches
 from pptx.dml.color import RGBColor
 from pptx.util import Pt
 from PIL import Image
+import re
 
 def summarise(name):
     openai.api_key = "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"
@@ -101,7 +102,9 @@ def generate_slides(infoList):
         bullet_start = text.find("Points:") + len("Points:")
         bullet_end = text.find("\n\n", bullet_start)
         bullet_text = text[bullet_start:bullet_end].strip()
-        bullet_points = bullet_text.split("\n")
+        # bullet_points = bullet_text.split("\n")
+        bullet_points = re.split(r'\n[•\-0-9.]+', bullet_text)
+        # bullet_points = re.split(r'(?<=\n)[•\-0-9.]+', bullet_text)
 
         # Add each object as a slide
         slide = prs.slides.add_slide(prs.slide_layouts[3])
