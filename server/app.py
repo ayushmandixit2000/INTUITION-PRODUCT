@@ -1,16 +1,10 @@
 from flask import Flask, request
 from flask_cors import CORS
-import PyPDF2
-from io import StringIO
-import io
-from urllib.request import urlopen, Request
-from PyPDF2 import PdfFileReader
-import openai
-import time
 from processor import summarise
 
 app = Flask(__name__)
 CORS(app)
+
 @app.route('/paperUpload', methods=['POST'])
 def upload_pdf():
     # Get the PDF file from the request

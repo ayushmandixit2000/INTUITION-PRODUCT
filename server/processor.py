@@ -6,7 +6,7 @@ from PyPDF2 import PdfFileReader
 import openai
 import time
 
-openai.api_key = "YOUR-API-KEY-HERE"
+openai.api_key = "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"
 model_engine = "text-davinci-003"
 user_prompt = "I want a powerpoint slide header and description from this text in 4 bullet points: "
 
@@ -24,7 +24,7 @@ def summarise(name):
     # Create a text file to write the converted text
     text_file_download = open(f'/Users/advait/Desktop/intuition_tests/server/output/{name}.txt', 'w')
 
-    responseTotal = ""
+    responseTotal = []
     for page_num in range(num_pages):
         page = pdf_reader.pages[page_num]
         text = page.extract_text()
@@ -44,7 +44,7 @@ def summarise(name):
         response = completion.choices[0].text
         print(response + "\n")
         time.sleep(5)
-        responseTotal += response
+        responseTotal.append(response)
 
     # Close the files
     pdf_file_download.close()

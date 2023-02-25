@@ -4,7 +4,7 @@ import Summary from './Summary';
 
 function UploadFile() {
   const [selectedFile, setSelectedFile] = useState(null);
-  const [summary, setSummary] = useState("");
+  const [summary, setSummary] = useState([]);
 
   const handleFileSelect = (event) => {
     setSelectedFile(event.target.files[0]);
