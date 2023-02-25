@@ -8,7 +8,7 @@ function Hero() {
         MSD.ai
       </h2>
 
-      <div className="mx-auto text-3xl mt-2 md:text-3xl text-white">
+      <div className="mx-auto text-3xl mt-2 md:text-3xl text-white mb-12">
         <Typewriter
           options={{
             strings: [

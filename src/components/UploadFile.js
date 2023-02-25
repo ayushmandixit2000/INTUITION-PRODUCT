@@ -26,7 +26,11 @@ function UploadFile() {
 
   return (
     <div>
+      <div className='text-white text-center'>
+          Upload a research paper below to get a quick summary!
+          </div>
       <div className="flex flex-wrap m-2 justify-center">
+        
         <input
           type="file"
           onChange={handleFileSelect}
@@ -39,7 +43,7 @@ function UploadFile() {
           Upload PDF
         </button>
       </div>
-      <h1 className="text-white text-center text-3xl font-bold">Summary</h1>
+    
       <Summary text={summary} />
     </div>
   );
