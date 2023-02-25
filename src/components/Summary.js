@@ -27,24 +27,19 @@ function Summary(props) {
   console.log(summarySection)
   return (
     <>
-      
-        
-          <div className="text-center shadow-lg m-10 p-10 rounded-xl my-10 border-2 dark:border-orange-200">
-            <div className="text-center text-white">
+      {props.text && props.text.length > 0 ? (
+        <div className="text-center shadow-lg m-10 p-10 rounded-xl my-10 border-2 dark:border-orange-200">
+          <div className="text-center text-white">
             <h1 className="text-4xl font-bold mb-6">Summarised Article</h1>
 
             {props.isLoading ? <p>loading...</p> : null}
 
-            {props.text && props.text.length > 0 ? (
             <div className="flex flex-wrap justify-center">
               {summarySection}
             </div>
-            ) : null}
-
-            </div>
           </div>
-        
-      
+        </div>
+      ) : null}
     </>
   );
 }
