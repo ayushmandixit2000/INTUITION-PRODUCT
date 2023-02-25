@@ -26,7 +26,7 @@ function UploadFile() {
 
     return (
         <div>
-            <input type="file" onChange={handleFileSelect} />
+            <input type="file" onChange={handleFileSelect} className="py-1 px-2 rounded-md bg-orange-300 text-black font-semibold"/>
             <button onClick={handleFileUpload}>Upload PDF</button>
             <h1>Summary</h1>
             {loaded ? <p>{summary}</p> : <p>loading...</p>}
