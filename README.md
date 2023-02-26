@@ -19,12 +19,14 @@ This project was developed for MSD, a multinational pharmaceutical company. The 
 ### Interacting with recent news healthcare updates and discoveries
 
 The webapp pulls the most recent significant healthcare developments and displays it as a carousell for healthcare professionals. The professionals can interact with it to see the whole article by clicking on the title. The summary is shown below the image.
+
 https://user-images.githubusercontent.com/65294826/221390694-d94005b8-4636-49ba-b38f-c0ba7f1ec6f5.mov
 
 
 ### Uploading Research and Normal Articles to get summaries and important images
 
 Note that this process may take longer depedning on the size of the article uploaded
+
 https://user-images.githubusercontent.com/65294826/221390952-2a9920fd-59b2-4077-8b9d-8d666fc52892.mov
 
 
