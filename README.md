@@ -2,6 +2,13 @@
 
 This project was developed for MSD, a multinational pharmaceutical company. The app aims to reduce time browsing and consuming articles. Additionally, it serves as a one stop platform to generate slides and answer relevant questions thereafter
 
+## Exciting Features
+- No Limit on uploaded research articles
+- Retains important graphs and data
+- Seamless Slides Generation
+- Slide Generated converted to powerpoint slides immediately
+- Recent and changing up to date healthcare discroveries displayed as a carousel with summaries and necessary links
+
 ## Available Scripts - Server Set up
 
 After making sure the venv is set up to be with python3 in the server directory, you can run:
@@ -24,7 +31,7 @@ After making sure the react and js is installed, you can run:
 The web app shoud now be running. If any modules error encountered, ensure that your venv is correct and npm install the module therefater
 
 ## Project Demo
-[![Demo CountPages alpha](https://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
