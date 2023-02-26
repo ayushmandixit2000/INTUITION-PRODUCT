@@ -1,4 +1,4 @@
-# AI web-app for doctors to be able to effecitvely consume latest research articles and upload their articles to get summary and generate powerpoint slides.
+# AI web-app for doctors to be able to effecitvely consume latest research articles and upload their articles to get summary and generate powerpoint slides. The app contains an in-app chatbot
 
 https://user-images.githubusercontent.com/65294826/221391619-da117ddd-0c8b-4fc9-8fb4-80ed1f0de5be.mov
 
