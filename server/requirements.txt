@@ -6,3 +6,6 @@ pikepdf
 python-pptx
 pillow
 Gunicorn
+numpy
+pinecone-client
+os
