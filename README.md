@@ -36,6 +36,14 @@ The web app shoud now be running. If any modules error encountered, ensure that 
 
 ## Project Demo
 
+### Interacting with recent news healthcare updates and discoveries
+
+The webapp pulls the most recent significant healthcare developments and displays it as a carousell for healthcare professionals. The professionals can interact with it to see the whole article by clicking on the title. The summary is shown below the image.
+
+https://user-images.githubusercontent.com/65294826/221390694-d94005b8-4636-49ba-b38f-c0ba7f1ec6f5.mov
+
+
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
