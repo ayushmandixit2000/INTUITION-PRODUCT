@@ -124,7 +124,7 @@ def generate_slides(infoList):
         slide_title.text_frame.paragraphs[0].font.color.rgb = RGBColor(14, 77, 22)
         slide_title.text_frame.paragraphs[0].font.bold = True
         tf = slide.shapes.placeholders[1].text_frame
-
+        scale_factor2 = 0.5
         for bullet_point in processed['bullets']:
             p = tf.add_paragraph()
             p.text = bullet_point
@@ -148,7 +148,7 @@ def generate_slides(infoList):
             pass
 
         logo_path = os.path.join(os.getcwd(), 'msd.png')
-        scale_factor2 = 0.5
+        
         slide.shapes.add_picture(logo_path, Inches(7.22), Inches(6.22), width=Inches(2.77), height=Inches(1.17))
          #, width=Inches(2.77), height=Inches(1.17)
 
