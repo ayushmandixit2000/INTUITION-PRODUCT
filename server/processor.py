@@ -132,25 +132,24 @@ def generate_slides(infoList):
             p.font.color.rgb = RGBColor(0,0,0)
             p.level = 1
         
-        image_path = os.path.join('images', os.path.basename(item['image_url']))
+        try:
+            image_path = os.path.join('images', os.path.basename(item['image_url']))
+            with Image.open(image_path) as img:
+                img.info['dpi'] = (300,300)
+                dpi = img.info['dpi']
+                img_width, img_height = img.size
+                width_inch = img_width / dpi[0]
+                height_inch = img_height / dpi[1]
+                print (width_inch, height_inch)
+            slide.shapes.add_picture(image_path, Inches(5.9), Inches(3.4),width=Inches(width_inch * scale_factor2), height=Inches(height_inch * scale_factor2))
+
+        except:
+            print("No image found")
+            pass
+
         logo_path = os.path.join(os.getcwd(), 'msd.png')
-        with Image.open(image_path) as img:
-            img.info['dpi'] = (300,300)
-            dpi = img.info['dpi']
-            img_width, img_height = img.size
-            width_inch = img_width / dpi[0]
-            height_inch = img_height / dpi[1]
-            print (width_inch, height_inch)
-
-        # Get the dimensions of the slide
-        # slide_width = slide.slide_width
-        # slide_height = slide.slide_height
-
-        # Calculate the scale factor that will allow the image to fit within the slide
-        # scale_factor = min(slide_width / img_width, slide_height / img_height)
         scale_factor2 = 0.5
-        
         slide.shapes.add_picture(logo_path, Inches(7.22), Inches(6.22), width=Inches(2.77), height=Inches(1.17))
-        slide.shapes.add_picture(image_path, Inches(5.9), Inches(3.4),width=Inches(width_inch * scale_factor2), height=Inches(height_inch * scale_factor2)) #, width=Inches(2.77), height=Inches(1.17)
+         #, width=Inches(2.77), height=Inches(1.17)
 
     return prs

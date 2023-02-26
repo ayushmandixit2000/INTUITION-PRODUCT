@@ -76,6 +76,8 @@ def gpt3_completion(prompt, engine='text-davinci-003', temp=0.0, top_p=1.0, toke
 def load_conversation(results):
     result = list()
     for m in results['matches']:
+        # name = m['id'] + '.json'
+        # info = load_json(f"/Users/advait/Desktop/gitpositories/INTUITION-PRODUCT/server/nexus/{name}")
         info = load_json('/Users/someshsahu/Desktop/INTUITION-PRODUCT/server/nexus/%s.json' % m['id'])
         result.append(info)
     ordered = sorted(result, key=lambda d: d['time'], reverse=False)  # sort them all chronologically
