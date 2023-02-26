@@ -1,12 +1,28 @@
-# Getting Started with Create React App
+# AI web-app for doctors to be able to effecitvely consume latest research articles and upload their articles to get summary and generate powerpoint slides.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was developed for MSD, a multinational pharmaceutical company. The app aims to reduce time browsing and consuming articles. Additionally, it serves as a one stop platform to generate slides and answer relevant questions thereafter
 
-## Available Scripts
+## Available Scripts - Server Set up
 
-In the project directory, you can run:
+After making sure the venv is set up to be with python3 in the server directory, you can run:
 
-### `npm start`
+### `cd server ` 
+### `pip install -r requirements.txt ` 
+### 'flask run'
+
+The server shoud now be running. If any modules error encountered, ensure that your venv is correct and pip install the module therefater
+
+## Available Scripts - Running Web App
+
+Open a new terminal and navigate to the project directory.
+
+After making sure the react and js is installed, you can run:
+
+### `npm install` 
+### `npm start` 
+
+The web app shoud now be running. If any modules error encountered, ensure that your venv is correct and npm install the module therefater
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
