@@ -8,6 +8,7 @@ This project was developed for MSD, a multinational pharmaceutical company. The 
 
 ## Exciting Features
 - No Limit on uploaded research articles
+- In App ChatBot for healthcare professionbals to ask relevant questions
 - Retains important graphs and data
 - Seamless Slides Generation
 - Slide Generated converted to powerpoint slides immediately
@@ -32,6 +33,10 @@ https://user-images.githubusercontent.com/65294826/221390952-2a9920fd-59b2-4077-
 https://user-images.githubusercontent.com/65294826/221391073-ddb8cbd2-6c4d-4e86-9c34-c5149a859bd2.mov
 
 
+
+
+
+
 ## Available Scripts - Server Set up
 
 After making sure the venv is set up to be with python3 in the server directory, you can run:
@@ -41,6 +46,8 @@ After making sure the venv is set up to be with python3 in the server directory,
 ### `flask run ` 
 
 The server shoud now be running. If any modules error encountered, ensure that your venv is correct and pip install the module therefater
+
+
 
 ## Available Scripts - Running Web App
 
