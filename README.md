@@ -8,7 +8,7 @@ After making sure the venv is set up to be with python3 in the server directory,
 
 ### `cd server ` 
 ### `pip install -r requirements.txt ` 
-### 'flask run'
+### `flask run ` 
 
 The server shoud now be running. If any modules error encountered, ensure that your venv is correct and pip install the module therefater
 
@@ -23,6 +23,8 @@ After making sure the react and js is installed, you can run:
 
 The web app shoud now be running. If any modules error encountered, ensure that your venv is correct and npm install the module therefater
 
+## Project Demo
+[![Demo CountPages alpha](https://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
