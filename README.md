@@ -1,6 +1,5 @@
 # AI web-app for doctors to be able to effecitvely consume latest research articles and upload their articles to get summary and generate powerpoint slides.
 
-
 https://user-images.githubusercontent.com/65294826/221390525-2aba1574-f84e-44ff-8a67-cb2034f09e30.mov
 
 
@@ -8,7 +7,7 @@ This project was developed for MSD, a multinational pharmaceutical company. The 
 
 ## Exciting Features
 - No Limit on uploaded research articles
-- In App ChatBot for healthcare professionbals to ask relevant questions
+- In App CHATBOT with knowledge on articles asked earlier
 - Retains important graphs and data
 - Seamless Slides Generation
 - Slide Generated converted to powerpoint slides immediately
@@ -16,11 +15,11 @@ This project was developed for MSD, a multinational pharmaceutical company. The 
 
 ## Project Demo
 
-### Interacting with recent news healthcare updates and discoveries
+### Asking Relevant Questions to the ChatBot which learns from previous uploads of articles
 
-The webapp pulls the most recent significant healthcare developments and displays it as a carousell for healthcare professionals. The professionals can interact with it to see the whole article by clicking on the title. The summary is shown below the image.
+Simply submit your prompt in the box and wait for the reply
 
-https://user-images.githubusercontent.com/65294826/221390694-d94005b8-4636-49ba-b38f-c0ba7f1ec6f5.mov
+https://user-images.githubusercontent.com/65294826/221391483-06496f91-f92b-4569-81cc-420c3ccf6ae3.mov
 
 
 ### Uploading Research and Normal Articles to get summaries and important images
@@ -35,6 +34,11 @@ https://user-images.githubusercontent.com/65294826/221390952-2a9920fd-59b2-4077-
 https://user-images.githubusercontent.com/65294826/221391073-ddb8cbd2-6c4d-4e86-9c34-c5149a859bd2.mov
 
 
+### Interacting with recent news healthcare updates and discoveries
+
+The webapp pulls the most recent significant healthcare developments and displays it as a carousell for healthcare professionals. The professionals can interact with it to see the whole article by clicking on the title. The summary is shown below the image.
+
+https://user-images.githubusercontent.com/65294826/221390694-d94005b8-4636-49ba-b38f-c0ba7f1ec6f5.mov
 
 
 
