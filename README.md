@@ -39,47 +39,19 @@ The web app shoud now be running. If any modules error encountered, ensure that 
 ### Interacting with recent news healthcare updates and discoveries
 
 The webapp pulls the most recent significant healthcare developments and displays it as a carousell for healthcare professionals. The professionals can interact with it to see the whole article by clicking on the title. The summary is shown below the image.
-
 https://user-images.githubusercontent.com/65294826/221390694-d94005b8-4636-49ba-b38f-c0ba7f1ec6f5.mov
 
 
 ### Uploading Research and Normal Articles to get summaries and important images
 
 Note that this process may take longer depedning on the size of the article uploaded
-
-
 https://user-images.githubusercontent.com/65294826/221390952-2a9920fd-59b2-4077-8b9d-8d666fc52892.mov
 
 
+### Generating Instant Powerpoint Presenation with neccessary summarised points and important pictures
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://user-images.githubusercontent.com/65294826/221391073-ddb8cbd2-6c4d-4e86-9c34-c5149a859bd2.mov
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
