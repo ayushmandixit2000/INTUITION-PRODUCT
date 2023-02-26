@@ -3,6 +3,7 @@ from flask_cors import CORS
 from processor import summarise, extract_images, generate_slides
 import os
 import io
+from chatbot import do_conversation
 
 app = Flask(__name__)
 CORS(app)
@@ -64,3 +65,14 @@ def get_image_urls():
 
     # Return the image URLs as a JSON object
     return jsonify({'imageUrls': image_urls})
+
+@app.route('/talkToMe', methods=['POST'])
+def talk_to_me():
+    # Get the user's message
+    user_message = request.json['userInput']
+
+    # Get the bot's response
+    bot_response = do_conversation(user_message)
+
+    # Return the bot's response as a JSON object
+    return jsonify({'botResponse': bot_response})

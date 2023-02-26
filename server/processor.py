@@ -153,3 +153,5 @@ def generate_slides(infoList):
          #, width=Inches(2.77), height=Inches(1.17)
 
     return prs
+
+

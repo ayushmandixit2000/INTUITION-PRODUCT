@@ -84,38 +84,43 @@ def load_conversation(results):
     return '\n'.join(messages).strip()
 
 
-if __name__ == '__main__':
+def do_conversation(userInput):
     convo_length = 30
     openai.api_key = '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'
     pinecone.init(api_key='d98bf488-05cc-4cb6-b5f5-d7a71edf14dd', environment='us-east1-gcp')
     vdb = pinecone.Index("intuitive-mvp")
-    while True:
-        #### get user input, save it, vectorize it, save to pinecone
-        payload = list()
-        a = input('\n\nUSER: ')
-        timestamp = time()
-        timestring = timestamp_to_datetime(timestamp)
-        #message = '%s: %s - %s' % ('USER', timestring, a)
-        message = a
-        vector = gpt3_embedding(message)
-        unique_id = str(uuid4())
-        metadata = {'speaker': 'USER', 'time': timestamp, 'message': message, 'timestring': timestring, 'uuid': unique_id}
-        save_json('nexus/%s.json' % unique_id, metadata)
-        payload.append((unique_id, vector))
-        #### search for relevant messages, and generate a response
-        results = vdb.query(vector=vector, top_k=convo_length)
-        conversation = load_conversation(results)  # results should be a DICT with 'matches' which is a LIST of DICTS, with 'id'
-        prompt = open_file('prompt_response.txt').replace('<<CONVERSATION>>', conversation).replace('<<MESSAGE>>', a)
-        #### generate response, vectorize, save, etc
-        output = gpt3_completion(prompt)
-        timestamp = time()
-        timestring = timestamp_to_datetime(timestamp)
-        #message = '%s: %s - %s' % ('RAVEN', timestring, output)
-        message = output
-        vector = gpt3_embedding(message)
-        unique_id = str(uuid4())
-        metadata = {'speaker': 'MSDAI', 'time': timestamp, 'message': message, 'timestring': timestring, 'uuid': unique_id}
-        save_json('nexus/%s.json' % unique_id, metadata)
-        payload.append((unique_id, vector))
-        vdb.upsert(payload)
-        print('\n\MSDAI: %s' % output) 
+    
+    #### get user input, save it, vectorize it, save to pinecone
+    payload = list()
+    # a = input('\n\nUSER: ')
+    a = userInput
+    timestamp = time()
+    timestring = timestamp_to_datetime(timestamp)
+    #message = '%s: %s - %s' % ('USER', timestring, a)
+    message = a
+    vector = gpt3_embedding(message)
+    unique_id = str(uuid4())
+    metadata = {'speaker': 'USER', 'time': timestamp, 'message': message, 'timestring': timestring, 'uuid': unique_id}
+    save_json('nexus/%s.json' % unique_id, metadata)
+    payload.append((unique_id, vector))
+    #### search for relevant messages, and generate a response
+    results = vdb.query(vector=vector, top_k=convo_length)
+    conversation = load_conversation(results)  # results should be a DICT with 'matches' which is a LIST of DICTS, with 'id'
+    prompt = open_file('prompt_response.txt').replace('<<CONVERSATION>>', conversation).replace('<<MESSAGE>>', a)
+    #### generate response, vectorize, save, etc
+    output = gpt3_completion(prompt)
+    timestamp = time()
+    timestring = timestamp_to_datetime(timestamp)
+    #message = '%s: %s - %s' % ('RAVEN', timestring, output)
+    message = output
+    vector = gpt3_embedding(message)
+    unique_id = str(uuid4())
+    metadata = {'speaker': 'MSDAI', 'time': timestamp, 'message': message, 'timestring': timestring, 'uuid': unique_id}
+    save_json('nexus/%s.json' % unique_id, metadata)
+    payload.append((unique_id, vector))
+    vdb.upsert(payload)
+    print('\nMSDAI: %s' % output) 
+    return output
+
+
+do_conversation("hello")
