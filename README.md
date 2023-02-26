@@ -1,5 +1,9 @@
 # AI web-app for doctors to be able to effecitvely consume latest research articles and upload their articles to get summary and generate powerpoint slides.
 
+
+https://user-images.githubusercontent.com/65294826/221390525-2aba1574-f84e-44ff-8a67-cb2034f09e30.mov
+
+
 This project was developed for MSD, a multinational pharmaceutical company. The app aims to reduce time browsing and consuming articles. Additionally, it serves as a one stop platform to generate slides and answer relevant questions thereafter
 
 ## Exciting Features
