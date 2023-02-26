@@ -16,26 +16,25 @@ This project was developed for MSD, a multinational pharmaceutical company. The 
 ## Project Demo
 
 ### Asking Relevant Questions to the ChatBot which learns from previous uploads of articles
-
 Simply submit your prompt in the box and wait for the reply
 
 https://user-images.githubusercontent.com/65294826/221391483-06496f91-f92b-4569-81cc-420c3ccf6ae3.mov
 
 
-### Uploading Research and Normal Articles to get summaries and important images
 
+### Uploading Research and Normal Articles to get summaries and important images
 Note that this process may take longer depedning on the size of the article uploaded
 
 https://user-images.githubusercontent.com/65294826/221390952-2a9920fd-59b2-4077-8b9d-8d666fc52892.mov
 
 
-### Generating Instant Powerpoint Presenation with neccessary summarised points and important pictures
 
+### Generating Instant Powerpoint Presenation with neccessary summarised points and important pictures
 https://user-images.githubusercontent.com/65294826/221391073-ddb8cbd2-6c4d-4e86-9c34-c5149a859bd2.mov
 
 
-### Interacting with recent news healthcare updates and discoveries
 
+### Interacting with recent news healthcare updates and discoveries
 The webapp pulls the most recent significant healthcare developments and displays it as a carousell for healthcare professionals. The professionals can interact with it to see the whole article by clicking on the title. The summary is shown below the image.
 
 https://user-images.githubusercontent.com/65294826/221390694-d94005b8-4636-49ba-b38f-c0ba7f1ec6f5.mov
