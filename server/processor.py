@@ -11,7 +11,7 @@ from PIL import Image
 import re
 
 def summarise(name):
-    openai.api_key = "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"
+    openai.api_key = "YOUR_API_KEY"
     model_engine = "text-davinci-003"
     user_prompt = "Generate a powerpoint Slide Header and only four Bullet Points that are at most 2 sentences long for this text: "
 
