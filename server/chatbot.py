@@ -86,9 +86,9 @@ def load_conversation(results):
 
 def do_conversation(userInput):
     convo_length = 30
-    openai.api_key = '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'
-    pinecone.init(api_key='d98bf488-05cc-4cb6-b5f5-d7a71edf14dd', environment='us-east1-gcp')
-    vdb = pinecone.Index("intuitive-mvp")
+    openai.api_key = 'YOUR_API_KEY'
+    pinecone.init(api_key='YOUR_API_KEY', environment='us-east1-gcp')
+    vdb = pinecone.Index("INDEX_NAME")
     
     #### get user input, save it, vectorize it, save to pinecone
     payload = list()
